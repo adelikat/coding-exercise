@@ -10,3 +10,5 @@ cd src
 dotnet restore
 dotnet run
 ```
+## References
+- dummyJSON: https://dummyjson.com/docs/users
