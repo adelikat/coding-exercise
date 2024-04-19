@@ -8,7 +8,7 @@ public class UserService
         
         var json = await httpClient.GetStringAsync("https://dummyjson.com/users");
 
-        // TODO: didn't not have time to finish this
+        // TODO: didn't have time to finish this
         return new UsersResult { Users = json };
     }
 }
