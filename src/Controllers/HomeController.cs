@@ -1,5 +1,4 @@
-﻿using CodingExercise.Models;
-using CodingExercise.Services;
+﻿using CodingExercise.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodingExercise.Controllers;
@@ -15,13 +14,10 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var homeService = new HomeService();
+        var homeService = new UserService();
         var users = await homeService.GetUsersAsync();
 
-        return View(new IndexViewModel
-        {
-            Users = users,
-        });
+        return View(users);
     }
 
     public IActionResult Example()
