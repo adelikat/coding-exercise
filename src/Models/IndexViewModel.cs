@@ -1,7 +1,6 @@
-namespace CodingExercise.Models
+namespace CodingExercise.Models;
+
+public class IndexViewModel
 {
-    public class IndexViewModel
-    {
-        public string Users { get; set; }
-    }
+    public string Users { get; set; }
 }

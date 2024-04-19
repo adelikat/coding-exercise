@@ -1,15 +1,14 @@
-﻿namespace CodingExercise.Services
-{
-    public interface ISuperMarketLogger
-    {
-        void Log(string message);
-    }
+﻿namespace CodingExercise.Services;
 
-    public class SuperMarketLogger : ISuperMarketLogger
+public interface ISuperMarketLogger
+{
+    void Log(string message);
+}
+
+public class SuperMarketLogger : ISuperMarketLogger
+{
+    public void Log(string message)
     {
-        public void Log(string message)
-        {
-            Console.WriteLine(message);
-        }
+        Console.WriteLine(message);
     }
 }

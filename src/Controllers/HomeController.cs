@@ -2,31 +2,30 @@
 using CodingExercise.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CodingExercise.Controllers
+namespace CodingExercise.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ISuperMarketLogger _logger;
+
+    public HomeController(ISuperMarketLogger logger)
     {
-        private readonly ISuperMarketLogger _logger;
+        _logger = logger;
+    }
 
-        public HomeController(ISuperMarketLogger logger)
+    public async Task<IActionResult> Index()
+    {
+        var homeService = new HomeService();
+        var users = await homeService.GetUsersAsync();
+
+        return View(new IndexViewModel
         {
-            _logger = logger;
-        }
+            Users = users,
+        });
+    }
 
-        public async Task<IActionResult> Index()
-        {
-            var homeService = new HomeService();
-            var users = await homeService.GetUsersAsync();
-
-            return View(new IndexViewModel
-            {
-                Users = users,
-            });
-        }
-
-        public IActionResult Example()
-        {
-            return View();
-        }
+    public IActionResult Example()
+    {
+        return View();
     }
 }
