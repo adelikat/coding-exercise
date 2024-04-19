@@ -23,5 +23,10 @@ namespace CodingExercise.Controllers
                 Users = users,
             });
         }
+
+        public IActionResult Example()
+        {
+            return View();
+        }
     }
 }
