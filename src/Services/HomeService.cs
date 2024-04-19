@@ -6,7 +6,10 @@
         {
             var httpClient = new HttpClient();
             
-            return await httpClient.GetStringAsync("https://dummyjson.com/users");
+            var json = await httpClient.GetStringAsync("https://dummyjson.com/users");
+
+            // TODO: didn't not have time to finish this
+            return json;
         }
     }
 }
