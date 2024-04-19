@@ -14,8 +14,8 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var homeService = new UserService();
-        var users = await homeService.GetUsersAsync();
+        var userService = new UserService();
+        var users = await userService.GetUsersAsync();
 
         return View(users);
     }
